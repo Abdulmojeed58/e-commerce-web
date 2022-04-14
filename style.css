@@ -25,6 +25,14 @@ body {
 .menu {
     display: none;
 }
+ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.close {
+    display: none;
+}
 .navbar {
     display: flex;
     justify-content: space-between;
