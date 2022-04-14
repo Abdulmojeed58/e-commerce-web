@@ -1,0 +1,13 @@
+.flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+a {
+    text-decoration: none;
+}
+li {
+    list-style: none;
+    color: var(--Grayish-blue);
+}
