@@ -61,7 +61,7 @@ li {
     font-size: .9rem;
     font-weight: 700;
 }
-.cart-checkout p span {
+.cart-checkout p .money {
     color: var(--Very-vark-blue);
 }
 .checkout-button {
