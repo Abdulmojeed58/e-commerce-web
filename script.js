@@ -11,3 +11,35 @@ menu.addEventListener("click", () => {
         })
     });
 })
+
+const cartImage = document.querySelector(".cart-img");
+
+cartImage.addEventListener("click", () => {
+    const cartPurchase = document.querySelector(".cart-purchase");
+    cartPurchase.classList.toggle("active");
+})
+
+const positive = document.querySelector("#positive");
+const negative = document.querySelector("#negative");
+let number = document.querySelector(".number");
+
+let count = 0;
+
+positive.addEventListener("click", (e) => {
+    e.preventDefault
+    if (number.value <= 10) {
+
+        count++;
+        number.value = count;
+    }
+})
+
+negative.addEventListener("click", (e) => {
+    e.preventDefault
+    
+    if(number.value >= 0) {
+        count--;
+    number.value = count;
+    }
+    
+})
