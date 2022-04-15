@@ -43,3 +43,21 @@ negative.addEventListener("click", (e) => {
     }
     
 })
+
+const addToCart = document.querySelector("#add-to-cart");
+const empty = document.querySelector(".empty");
+const cartCheckout = document.querySelector(".cart-checkout");
+
+addToCart.addEventListener("click", (e) => {
+    e.preventDefault;
+    empty.classList.add("active");
+    cartCheckout.classList.remove("active");
+})
+
+const checkOut = document.querySelector("#checkout");
+
+checkOut.addEventListener("click", (e) => {
+    e.preventDefault;
+    empty.classList.remove("active");
+    cartCheckout.classList.add("active");
+})

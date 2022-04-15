@@ -140,4 +140,9 @@
     .active {
         display: none;
     }
+
+    
+    .cart-checkout {
+        margin-top: -10px;
+    }
 }
