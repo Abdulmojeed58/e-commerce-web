@@ -12,7 +12,7 @@ menu.addEventListener("click", () => {
     });
 })
 
-const cartImage = document.querySelector(".cart-img");
+const cartImage = document.querySelector(".cartt");
 
 const cartPurchase = document.querySelector(".cart-purchase");
 cartImage.addEventListener("click", () => {
