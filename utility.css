@@ -78,3 +78,6 @@ li {
     color: var(--Light-grayish-blue);
     font-weight: 700;
 }
+.checkout-button:hover {
+    background-color: rgba(255, 125, 26, 0.8);
+}

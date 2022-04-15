@@ -79,3 +79,51 @@ checkOut.addEventListener("click", (e) => {
     empty.classList.remove("active");
     cartCheckout.classList.add("active");
 })
+
+const sales = document.querySelectorAll(".sales");
+
+const item1 = document.querySelector(".item1");
+const item2 = document.querySelector(".item2");
+const item3 = document.querySelector(".item3");
+const item4 = document.querySelector(".item4");
+
+item1.addEventListener("click", () => {
+    sales.forEach((sale) => {
+        sale.classList.add("active")
+    })
+    for(let i = 0; i < sales.length; i++) {
+        sales[0].classList.remove("active")
+    }
+    console.log("mjay")
+    
+})
+item2.addEventListener("click", () => {
+    sales.forEach((sale) => {
+        sale.classList.add("active")
+    })
+    for(let i = 0; i < sales.length; i++) {
+        sales[1].classList.remove("active")
+    }
+    console.log("mjay")
+    
+})
+item3.addEventListener("click", () => {
+    sales.forEach((sale) => {
+        sale.classList.add("active")
+    })
+    for(let i = 0; i < sales.length; i++) {
+        sales[2].classList.remove("active")
+    }
+    console.log("mjay")
+    
+})
+item4.addEventListener("click", () => {
+    sales.forEach((sale) => {
+        sale.classList.add("active")
+    })
+    for(let i = 0; i < sales.length; i++) {
+        sales[3].classList.remove("active")
+    }
+    console.log("mjay")
+    
+})
