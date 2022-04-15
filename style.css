@@ -59,7 +59,23 @@ li > a {
 .image {
     margin-left: 25px;
 }
+.cart-img {
+    position: relative;
+}
 
+.notification {
+    position: absolute;
+    z-index: 1000;
+    background-color: var(--Orange);
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    text-align: center;
+    color: var(--Light-grayish-blue);
+    font-size: .7rem;
+    top: 0;
+    right: 65%;
+}
 
 
 .img1, .img2, .img3, .img4 {

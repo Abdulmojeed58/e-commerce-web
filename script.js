@@ -47,6 +47,7 @@ negative.addEventListener("click", (e) => {
 const addToCart = document.querySelector("#add-to-cart");
 const empty = document.querySelector(".empty");
 const cartCheckout = document.querySelector(".cart-checkout");
+const notification = document.querySelector(".notification");
 
 addToCart.addEventListener("click", (e) => {
     if(number.value > 0) {
@@ -55,6 +56,7 @@ addToCart.addEventListener("click", (e) => {
         empty.classList.add("active");
         cartCheckout.classList.remove("active");
         cartPurchase.classList.remove("active");
+        notification.classList.remove("active");
         setTimeout(() => {
             cartPurchase.classList.add("active");
             cartPurchase.style.position = sticky;
@@ -78,6 +80,7 @@ checkOut.addEventListener("click", (e) => {
     e.preventDefault;
     empty.classList.remove("active");
     cartCheckout.classList.add("active");
+    notification.classList.add("active");
 })
 
 const sales = document.querySelectorAll(".sales");
