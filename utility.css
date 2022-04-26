@@ -81,3 +81,59 @@ li {
 .checkout-button:hover {
     background-color: rgba(255, 125, 26, 0.8);
 }
+
+
+
+
+.modal {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 20;
+    transition: all 2s linear;
+}
+
+.modal-group {
+    margin-top: 30px;
+    position: relative;
+}
+.modal-group::before{
+    content: url(images/icon-previous.svg);
+    z-index: 5;
+    background-color: white;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.modal-group::after{
+    content: url(images/icon-next.svg);
+    z-index: 5;
+    background-color: white;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(50%, -50%);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.modal-close > svg {
+    fill: var(--Orange);
+    float: right;
+    margin-bottom: 20px;
+}

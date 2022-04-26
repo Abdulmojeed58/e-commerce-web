@@ -3,11 +3,11 @@ const menu = document.querySelector(".menu")
 
 
 menu.addEventListener("click", () => {
-    ul.classList.toggle("active");
+    ul.classList.toggle("none");
     const lists = document.querySelectorAll("li");
     lists.forEach( list => {
         list.addEventListener("click", () => {
-            ul.classList.add("active");
+            ul.classList.remove("none");
         })
     });
 })
@@ -23,12 +23,11 @@ const positive = document.querySelector("#positive");
 const negative = document.querySelector("#negative");
 let number = document.querySelector(".number");
 
-let count = 1;
+let count = 0;
 
 positive.addEventListener("click", (e) => {
     e.preventDefault
-    if (number.value <= 10) {
-
+    if (number.value <= 9) {
         count++;
         number.value = count;
     }
@@ -36,8 +35,7 @@ positive.addEventListener("click", (e) => {
 
 negative.addEventListener("click", (e) => {
     e.preventDefault
-    
-    if(number.value >= 0) {
+    if(number.value >= 1) {
         count--;
     number.value = count;
     }
@@ -131,4 +129,23 @@ item4.addEventListener("click", () => {
     }
     console.log("mjay")
     
+})
+
+
+
+const collection = document.querySelector("#collection");
+const modal = document.querySelector(".modal");
+const modalClose = document.querySelector(".modal-close")
+
+collection.addEventListener("click", () => {
+    modal.classList.remove("modal-active")
+});
+modalClose.addEventListener("click", () => {
+    modal.classList.add("modal-active")
+})
+
+window.addEventListener("click", (e) => {
+    if(e.target == modal) {
+        modal.classList.add("modal-active")
+    }
 })

@@ -91,6 +91,7 @@ li > a {
     border-radius: 10px;
     margin-left: 2px;
 }
+
 /* .itemm {
     background: url(images/image-product-1-thumbnail.jpg);
     background-position: center;
@@ -214,3 +215,20 @@ li > a {
 #add-to-cart:hover {
     background-color: rgba(255, 125, 26, 0.8);
 }
+
+
+
+.modal1 {
+    width: 410px;
+}
+
+.modal3 {
+    justify-content: center;
+    gap: 20px;
+}
+
+.modal-active {
+    display: none;
+}
+
+
