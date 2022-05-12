@@ -97,7 +97,6 @@ item1.addEventListener("click", () => {
     for(let i = 0; i < sales.length; i++) {
         sales[0].classList.remove("active")
     }
-    console.log("mjay")
     
 })
 item2.addEventListener("click", () => {
@@ -107,7 +106,6 @@ item2.addEventListener("click", () => {
     for(let i = 0; i < sales.length; i++) {
         sales[1].classList.remove("active")
     }
-    console.log("mjay")
     
 })
 item3.addEventListener("click", () => {
@@ -117,7 +115,6 @@ item3.addEventListener("click", () => {
     for(let i = 0; i < sales.length; i++) {
         sales[2].classList.remove("active")
     }
-    console.log("mjay")
     
 })
 item4.addEventListener("click", () => {
@@ -127,7 +124,6 @@ item4.addEventListener("click", () => {
     for(let i = 0; i < sales.length; i++) {
         sales[3].classList.remove("active")
     }
-    console.log("mjay")
     
 })
 
@@ -149,3 +145,70 @@ window.addEventListener("click", (e) => {
         modal.classList.add("modal-active")
     }
 })
+
+const sliders = document.querySelectorAll(".slider")
+const next = document.querySelector(".next-btn")
+const prev = document.querySelector(".prev-btn")
+
+sliders.forEach((slider, index)=>{
+    slider.style.left = `${100 * index}%`
+    // console.log('mjay')
+})
+
+let counter = 0
+
+next.addEventListener("click", ()=>{
+    counter ++
+    carousel()
+    console.log(counter)
+})
+prev.addEventListener("click", ()=>{
+    counter --
+    carousel()
+})
+
+
+function carousel(){
+    if(counter === sliders.length-1){
+        // counter = 0;
+        next.style.display = `none`
+    } else {
+        next.style.display = `flex`
+        
+    }
+    if(counter === 0){
+            // counter = sliders.length - 1
+            prev.style.display = `none`
+        } else {
+            prev.style.display = `flex`
+
+        }
+    
+    // if(counter < sliders.length) {
+
+        sliders.forEach((slider, index)=>{
+            slider.style.transform = `translateX(-${counter * 100}%)`
+        })
+        // counter = 00
+    }
+    
+// }
+
+
+// function carousel(){
+        //     if(counter === slider.length){
+        //     counter = 0;
+        // }
+        // if(counter < 0){
+        //     counter = slider.length - 1
+        // }
+        //     slider.forEach((slide, i)=>{
+        //     slide.style.transform = `translateX(-${counter * 100}%)`
+        // })
+        // }
+
+// const w = document.querySelector(".slider1")
+// w.addEventListener("click", ()=>{
+//     const b = w.getBoundingClientRect().height
+//     console.log(b)
+// })
