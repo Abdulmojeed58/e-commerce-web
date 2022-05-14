@@ -103,8 +103,7 @@ li {
     margin-top: 30px;
     position: relative;
 }
-.modal-group::before{
-    content: url(images/icon-previous.svg);
+.prev-btn1{
     z-index: 5;
     background-color: white;
     position: absolute;
@@ -117,8 +116,7 @@ li {
     justify-content: center;
     align-items: center;
 }
-.modal-group::after{
-    content: url(images/icon-next.svg);
+.next-btn1{
     z-index: 5;
     background-color: white;
     position: absolute;
@@ -136,4 +134,5 @@ li {
     fill: var(--Orange);
     float: right;
     margin-bottom: 20px;
+    cursor: pointer;
 }

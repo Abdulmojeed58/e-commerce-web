@@ -1,17 +1,22 @@
 const ul = document.querySelector("ul");
 const menu = document.querySelector(".menu")
+const main = document.querySelector(".main")
 
-
+////////// NAVBAR ////////
 menu.addEventListener("click", () => {
-    ul.classList.toggle("none");
+        main.classList.toggle("fixed")
+        ul.classList.toggle("none");
     const lists = document.querySelectorAll("li");
     lists.forEach( list => {
         list.addEventListener("click", () => {
             ul.classList.remove("none");
+            main.classList.remove("fixed")
         })
     });
 })
 
+
+//////ADD ITEM TO CART/////////
 const cartImage = document.querySelector(".cartt");
 
 const cartPurchase = document.querySelector(".cart-purchase");
@@ -56,10 +61,8 @@ addToCart.addEventListener("click", (e) => {
         cartCheckout.classList.remove("active");
         cartPurchase.classList.remove("active");
         notification.classList.remove("active");
-        cont.classList.add("fixed")
         setTimeout(() => {
             cartPurchase.classList.add("active");
-            cont.classList.remove("fixed")
         }, 5000);
     
         const total =document.querySelector(".total");
@@ -83,52 +86,23 @@ checkOut.addEventListener("click", (e) => {
     notification.classList.add("active");
 })
 
+
+/////////PRODUCTS IMAGES////////////
 const sales = document.querySelectorAll(".sales");
+const ids = document.querySelectorAll('[data-id]')
 
-const item1 = document.querySelector(".item1");
-const item2 = document.querySelector(".item2");
-const item3 = document.querySelector(".item3");
-const item4 = document.querySelector(".item4");
-
-item1.addEventListener("click", () => {
-    sales.forEach((sale) => {
-        sale.classList.add("active")
+ids.forEach(item=>{
+    item.addEventListener("click", (e)=>{
+        let id = e.target.dataset.id
+        const element = document.getElementById(id)
+        sales.forEach(sale=>{
+            sale.classList.add("active")
+        })
+        element.classList.remove("active")
     })
-    for(let i = 0; i < sales.length; i++) {
-        sales[0].classList.remove("active")
-    }
-    
-})
-item2.addEventListener("click", () => {
-    sales.forEach((sale) => {
-        sale.classList.add("active")
-    })
-    for(let i = 0; i < sales.length; i++) {
-        sales[1].classList.remove("active")
-    }
-    
-})
-item3.addEventListener("click", () => {
-    sales.forEach((sale) => {
-        sale.classList.add("active")
-    })
-    for(let i = 0; i < sales.length; i++) {
-        sales[2].classList.remove("active")
-    }
-    
-})
-item4.addEventListener("click", () => {
-    sales.forEach((sale) => {
-        sale.classList.add("active")
-    })
-    for(let i = 0; i < sales.length; i++) {
-        sales[3].classList.remove("active")
-    }
-    
 })
 
-
-
+//////////MODAL/////////////
 const collection = document.querySelector("#collection");
 const modal = document.querySelector(".modal");
 const modalClose = document.querySelector(".modal-close")
@@ -146,69 +120,62 @@ window.addEventListener("click", (e) => {
     }
 })
 
+
+///////////SLIDER///////////
 const sliders = document.querySelectorAll(".slider")
 const next = document.querySelector(".next-btn")
 const prev = document.querySelector(".prev-btn")
 
 sliders.forEach((slider, index)=>{
     slider.style.left = `${100 * index}%`
-    // console.log('mjay')
 })
+    
 
 let counter = 0
 
 next.addEventListener("click", ()=>{
     counter ++
-    carousel()
-    console.log(counter)
+    carousel(sliders, next, prev)
 })
 prev.addEventListener("click", ()=>{
     counter --
-    carousel()
+    carousel(sliders, next, prev)
 })
 
-
-function carousel(){
+function carousel(sliders, next, prev){
     if(counter === sliders.length-1){
-        // counter = 0;
         next.style.display = `none`
     } else {
         next.style.display = `flex`
         
     }
     if(counter === 0){
-            // counter = sliders.length - 1
             prev.style.display = `none`
         } else {
             prev.style.display = `flex`
 
         }
-    
-    // if(counter < sliders.length) {
 
         sliders.forEach((slider, index)=>{
             slider.style.transform = `translateX(-${counter * 100}%)`
         })
-        // counter = 00
     }
+////////MODAL SLIDER////////
+    const sliders1 = document.querySelectorAll(".slider1")
+    const next1 = document.querySelector(".next-btn1")
+    const prev1 = document.querySelector(".prev-btn1")
+
+    sliders1.forEach((slider, index)=>{
+        slider.style.left = `${100 * index}%`
+    })
+
+    next1.addEventListener("click", ()=>{
+        counter ++
+        carousel(sliders1, next1, prev1)
+    })
+    prev1.addEventListener("click", ()=>{
+        counter --
+        carousel(sliders1, next1, prev1)
+    })
+
     
-// }
-
-
-// function carousel(){
-        //     if(counter === slider.length){
-        //     counter = 0;
-        // }
-        // if(counter < 0){
-        //     counter = slider.length - 1
-        // }
-        //     slider.forEach((slide, i)=>{
-        //     slide.style.transform = `translateX(-${counter * 100}%)`
-        // })
-        // }
-
-// const w = document.querySelector(".slider1")
-// w.addEventListener("click", ()=>{
-//     const b = w.getBoundingClientRect().height
-//     console.log(b)
-// })
